@@ -1,0 +1,257 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Johan Cabuya Balceros">
+        <meta name="description" content="Sitio de autos japoneses de los años 2000">
+        <meta name="keywords" content="pagina, autos, JDM, años 2000, japoneses">
+        <title>JDM Cars War</title>
+        <link rel="icon" href="img/icon.png">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Garamond:wght@700&display=swap'); /* Importar Garamond Bold */
+
+            body {
+                font-family: 'Garamond', serif; /* Aplicar Garamond a todo el cuerpo */
+                background-color: #f4f4f4;
+                color: #333;
+                margin: 0;
+                padding: 0;
+                font-weight: bold; /* Aplicar negrita */
+            }
+            header {
+                background-image: url('img/carritos.jpg'); /* Ruta de la imagen de fondo */
+                background-size: cover;
+                background-position: center;
+                color: #fff;
+                padding: 320px 52px; /* Aumentar el padding para más espacio */
+                text-align: center;
+                font-size: 48px; /* Aumentar el tamaño de la fuente */
+            }
+            nav {
+                background-color: #444;
+                padding: 10px;
+                text-align: center;
+            }
+            nav a {
+                color: #fff;
+                margin: 0 15px;
+                text-decoration: none;
+                font-weight: bold; /* Aplicar negrita */
+            }
+            section {
+                padding: 20px;
+                background-color: #fff;
+            }
+            aside {
+                background-color: #eee;
+                padding: 10px;
+                float: right;
+                width: 25%;
+                box-sizing: border-box;
+            }
+            article {
+                margin-bottom: 20px;
+            }
+            h4 {
+                margin-top: 0;
+            }
+            p {
+                line-height: 1.6;
+            }
+            hr {
+                margin: 20px 0;
+            }
+            a {
+                color: #007bff;
+                text-decoration: none;
+                font-weight: bold; /* Aplicar negrita */
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            img {
+                width: 40%; /* Ajustar tamaño de las imágenes */
+                height: auto;
+                margin-top: 10px;
+                display: block;
+                float: left; /* Posicionar las imágenes a la izquierda */
+                margin-right: 20px; /* Espacio entre la imagen y el texto */
+            }
+            .toyota-supra {
+                color: #000000; /* Tomate */
+            }
+            .nissan-skyline {
+                color: #9c0808; /* Azul acero */
+            }
+            .honda-s2000 {
+                color: #000000; /* Verde lima */
+            }
+            .honda-nsx {
+                color: #9c0808; /* Dorado */
+            }
+            .mazda-rx7 {
+                color: #000000; /* Violeta */
+            }
+            .nissan-370z {
+                color: #9c0808; /* Naranja oscuro */
+            }
+            .mitsubishi-3000gt {
+                color: #000000; /* Turquesa oscuro */
+            }
+            .nissan-silvia {
+                color: #9c0808; /* Rosa fuerte */
+            }
+            .graph-container {
+                text-align: center;
+                margin: 20px 0;
+            }
+            canvas {
+                width: 600px !important; /* Cambiar ancho de la gráfica */
+                height: 300px !important; /* Cambiar altura de la gráfica */
+                display: block;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <header id="main-header">
+            <a style="color: #fff; text-decoration: none;">JDM Cars of the 2000s</a>
+        </header>
+        <nav>
+            <a href="#supra" onclick="changeHeaderImage('supra')">Toyota Supra (A80)</a>
+            <a href="#skyline" onclick="changeHeaderImage('skyline')">Nissan Skyline GT-R (R34)</a>
+            <a href="#s2000" onclick="changeHeaderImage('s2000')">Honda S2000</a>
+            <a href="#nsx" onclick="changeHeaderImage('nsx')">Honda NSX</a>
+            <a href="#rx7" onclick="changeHeaderImage('rx7')">Mazda RX-7</a>
+            <a href="#370z" onclick="changeHeaderImage('370z')">Nissan 370Z</a>
+            <a href="#3000gt" onclick="changeHeaderImage('3000gt')">Mitsubishi 3000GT</a>
+            <a href="#silvia" onclick="changeHeaderImage('silvia')">Nissan Silvia S15</a>
+        </nav>
+        <section>
+            <article>
+                <h4 id="supra" class="toyota-supra">Toyota Supra (A80)</h4>
+                <img src="img/supra.jpg" alt="Toyota Supra A80">
+                <p class="toyota-supra">El Toyota Supra A80, lanzado en 1993, revolucionó el mundo automotriz con su motor 2JZ-GTE, uno de los más icónicos y modificables en la historia de los autos. Su diseño aerodinámico y sus líneas agresivas lo convirtieron en una leyenda tanto en las calles como en la pantalla grande, apareciendo en franquicias de películas como "Rápido y Furioso". Con una potencia que podía superar los 1000 caballos de fuerza mediante modificaciones, el Supra A80 es amado por los tuners y corredores por igual.</p>
+                <hr>
+
+                <h4 id="skyline" class="nissan-skyline">Nissan Skyline GT-R (R34)</h4>
+                <img src="img/skyline.jpg" alt="Nissan Skyline GT-R R34">
+                <p class="nissan-skyline">El Nissan Skyline GT-R R34, producido entre 1999 y 2002, es famoso por su tecnología avanzada y su motor RB26DETT, un motor biturbo de 2.6 litros capaz de generar un rendimiento excepcional. Con su sistema de tracción total ATTESA E-TS y el sistema Super-HICAS para las ruedas traseras, el R34 tenía un manejo incomparable. Este coche no solo es una leyenda en la carretera, sino también en la cultura popular, consolidando su estatus en videojuegos como Gran Turismo y películas como "Rápido y Furioso".</p>
+                <hr>
+
+                <h4 id="s2000" class="honda-s2000">Honda S2000</h4>
+                <img src="img/s2000.jpg" alt="Honda S2000">
+                <p class="honda-s2000">El Honda S2000, lanzado en 1999 para conmemorar el 50 aniversario de Honda, es un roadster diseñado para ofrecer una experiencia de conducción pura. Con su motor F20C de 2.0 litros, es famoso por tener la mayor potencia específica de un motor atmosférico de producción, generando 240 caballos de fuerza a más de 8000 RPM. Su chasis perfectamente equilibrado, tracción trasera y cambio manual lo convierten en uno de los autos más queridos entre los puristas del automovilismo.</p>
+                <hr>
+
+                <h4 id="nsx" class="honda-nsx">Honda NSX</h4>
+                <img src="img/nsx.jpg" alt="Honda NSX">
+                <p class="honda-nsx">El Honda NSX, introducido en 1990, fue un superdeportivo revolucionario que desafió a los fabricantes europeos con su chasis de aluminio ligero y motor V6 montado en el medio. Este coche fue desarrollado con la ayuda del legendario piloto de Fórmula 1 Ayrton Senna, lo que resultó en un manejo superior y una estabilidad impresionante. El NSX es conocido por combinar un rendimiento excepcional con la confiabilidad de Honda, una combinación que rara vez se ve en los autos deportivos exóticos.</p>
+                <hr>
+
+                <h4 id="rx7" class="mazda-rx7">Mazda RX-7</h4>
+                <img src="img/rx7.jpg" alt="Mazda RX-7">
+                <p class="mazda-rx7">El Mazda RX-7 es famoso por su motor rotativo Wankel, una rareza en la industria automotriz, que ofrecía una experiencia de conducción única debido a su diseño ligero y alto régimen de revoluciones. Lanzado por primera vez en 1978, el RX-7 alcanzó su apogeo con la tercera generación (FD) en la década de 1990. Este coche es un favorito tanto en las pistas de carreras como en el mundo del drift, gracias a su equilibrio perfecto y su gran capacidad de personalización.</p>
+                <hr>
+
+                <h4 id="370z" class="nissan-370z">Nissan 370Z</h4>
+                <img src="img/370z.jpg" alt="Nissan 370Z">
+                <p class="nissan-370z">El Nissan 370Z, lanzado en 2009, es la sexta generación del legendario linaje Z de Nissan. Equipado con un motor V6 de 3.7 litros, produce 332 caballos de fuerza, ofreciendo una experiencia de conducción ágil y potente. Su diseño compacto y equilibrado lo hace ideal tanto para las carreteras como para los circuitos de carreras. Aunque más moderno que otros autos JDM clásicos, el 370Z sigue manteniendo viva la esencia del automovilismo deportivo japonés.</p>
+                <hr>
+
+                <h4 id="3000gt" class="mitsubishi-3000gt">Mitsubishi 3000GT</h4>
+                <img src="img/3000gt.jpg" alt="Mitsubishi 3000GT">
+                <p class="mitsubishi-3000gt">El Mitsubishi 3000GT, también conocido como GTO en Japón, fue un gran turismo producido entre 1990 y 2001. Este coche estaba lleno de tecnología avanzada para su época, incluyendo tracción en las cuatro ruedas, aerodinámica activa, y suspensión controlada electrónicamente. Equipado con un motor V6 biturbo, el 3000GT ofrecía un rendimiento impresionante en línea recta y en las curvas, haciéndolo un competidor serio en el segmento de autos deportivos de alta gama.</p>
+                <hr>
+
+                <h4 id="silvia" class="nissan-silvia">Nissan Silvia S15</h4>
+                <img src="img/silvia.jpg" alt="Nissan Silvia S15">
+                <p class="nissan-silvia">El Nissan Silvia S15, producido entre 1999 y 2002, es el último de la legendaria serie Silvia. Equipado con un motor SR20DET turboalimentado de 2.0 litros, este coche era perfecto para el drifting, con una distribución de peso óptima y tracción trasera. El S15 es altamente modificable, lo que lo convierte en un favorito entre los entusiastas de los autos y los corredores de drift. Su diseño elegante y aerodinámico sigue siendo venerado incluso dos décadas después de su lanzamiento.</p>
+                <hr>
+            </article>
+            <!-- Contenedor para la gráfica -->
+            <div class="graph-container">
+                <canvas id="carChart"></canvas> <!-- Tamaño mediano de la gráfica -->
+            </div>
+        </section>
+        <aside>
+            <h4>Related Articles</h4>
+            <p>Check out these other articles on JDM culture:</p>
+            <ul>
+                <li><a href="#supra">Toyota Supra (A80)</a></li>
+                <li><a href="#skyline">Nissan Skyline GT-R (R34)</a></li>
+                <li><a href="#s2000">Honda S2000</a></li>
+                <li><a href="#nsx">Honda NSX</a></li>
+                <li><a href="#rx7">Mazda RX-7</a></li>
+                <li><a href="#370z">Nissan 370Z</a></li>
+                <li><a href="#3000gt">Mitsubishi 3000GT</a></li>
+                <li><a href="#silvia">Nissan Silvia S15</a></li>
+            </ul>
+        </aside>
+        <footer>
+            <p>&copy; 2024 JDM Cars War | Designed by Johan Cabuya Balceros</p>
+            <p>https://www.autosJDMs.com</p>
+        </footer>
+
+        <script>
+            function changeHeaderImage(car) {
+                var header = document.getElementById('main-header');
+                switch(car) {
+                    case 'supra':
+                        header.style.backgroundImage = "url('img/supra.jpg')";
+                        break;
+                    case 'skyline':
+                        header.style.backgroundImage = "url('img/skyline.jpg')";
+                        break;
+                    case 's2000':
+                        header.style.backgroundImage = "url('img/s2000.jpg')";
+                        break;
+                    case 'nsx':
+                        header.style.backgroundImage = "url('img/nsx.jpg')";
+                        break;
+                    case 'rx7':
+                        header.style.backgroundImage = "url('img/rx7.jpg')";
+                        break;
+                    case '370z':
+                        header.style.backgroundImage = "url('img/370z.jpg')";
+                        break;
+                    case '3000gt':
+                        header.style.backgroundImage = "url('img/3000gt.jpg')";
+                        break;
+                    case 'silvia':
+                        header.style.backgroundImage = "url('img/silvia.jpg')";
+                        break;
+                    default:
+                        header.style.backgroundImage = "url('img/carritos.jpg')";
+                }
+            }
+
+            // Datos de ejemplo para la gráfica
+            var carData = {
+                labels: ['Toyota Supra', 'Nissan Skyline GT-R', 'Honda S2000', 'Honda NSX', 'Mazda RX-7', 'Nissan 370Z', 'Mitsubishi 3000GT', 'Nissan Silvia S15'],
+                datasets: [{
+                    label: 'Potencia (HP)',
+                    data: [320, 276, 240, 290, 276, 332, 320, 250],
+                    backgroundColor: [
+                        '#000000', '#9c0808', '#000000', '#9c0808', '#000000', '#9c0808', '#000000', '#9c0808'
+                    ]
+                }]
+            };
+
+            // Configuración de la gráfica
+            var ctx = document.getElementById('carChart').getContext('2d');
+            var carChart = new Chart(ctx, {
+                type: 'bar',
+                data: carData,
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
